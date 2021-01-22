@@ -1,2 +1,7 @@
 /              HomeR GET
 /add/#Int/#Int AddR  GET
+/static StaticR Static getStatic
+/pessoa/#PessoaId PessoaR GET POST
+/pessoas          PessoasR GET
+!/pessoa/cadastro PessoaCadastroR GET POST
+/blog-post BlogPostR GET POST

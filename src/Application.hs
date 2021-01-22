@@ -10,5 +10,9 @@ import Yesod.Core
 
 import Add
 import Home
+import Pessoa
+import BlogPost
+import PessoaCadastro
+import Pessoas
 
 mkYesodDispatch "App" resourcesApp

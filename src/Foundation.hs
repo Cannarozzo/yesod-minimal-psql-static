@@ -19,20 +19,30 @@ import Yesod.Core
 import Yesod
 import Data.Text
 import Database.Persist.Postgresql
+import Yesod.Static
+
+staticFiles "static"
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
-{-Cliente json
-   nome Text 
-   UniqueCliente nome
-   deriving Show
- -}
+Pessoa
+    nome Text
+    sobreNome Text
+    idade Int
+    deriving Show
+BlogPost
+    titulo Text
+    authorId PessoaId
+    deriving Show
 |]
 
-data App = App{connPool :: ConnectionPool}
+data App = App{connPool :: ConnectionPool, getStatic :: Static}
 
 mkYesodData "App" $(parseRoutesFile "routes.yesodroutes")
 
 instance Yesod App
+
+instance RenderMessage App FormMessage where
+    renderMessage _ _ = defaultFormMessage
 
 instance YesodPersist App where
    type YesodPersistBackend App = SqlBackend
