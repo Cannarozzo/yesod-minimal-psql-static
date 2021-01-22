@@ -1,7 +1,9 @@
-/              HomeR GET
-/add/#Int/#Int AddR  GET
+/                           HomeR               GET
+/add/#Int/#Int              AddR                GET
+/pessoa/#PessoaId           PessoaR             GET POST
+/pessoas                    PessoasR            GET
+!/pessoa/cadastro           PessoaCadastroR     GET POST
+!/pessoa/remove/#PessoaId   PessoaRemoveR       GET POST
+!/pessoa/atualiza           PessoaAtualizaR     GET POST
+/blog-post                  BlogPostR           GET POST
 /static StaticR Static getStatic
-/pessoa/#PessoaId PessoaR GET POST
-/pessoas          PessoasR GET
-!/pessoa/cadastro PessoaCadastroR GET POST
-/blog-post BlogPostR GET POST

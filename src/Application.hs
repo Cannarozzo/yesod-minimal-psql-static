@@ -12,7 +12,11 @@ import Add
 import Home
 import Pessoa
 import BlogPost
+
 import PessoaCadastro
 import Pessoas
+import PessoaRemove
+import PessoaAtualiza
+
 
 mkYesodDispatch "App" resourcesApp
