@@ -10,13 +10,13 @@ import Yesod.Core
 
 import Add
 import Home
-import Pessoa
-import BlogPost
 
-import PessoaCadastro
-import Pessoas
-import PessoaRemove
-import PessoaAtualiza
+import Handler.BlogPost
+import Handler.Pessoa.Pessoa
+import Handler.Pessoa.PessoaCadastro
+import Handler.Pessoa.Pessoas
+import Handler.Pessoa.PessoaRemove
+import Handler.Pessoa.PessoaAtualiza
 
 
 mkYesodDispatch "App" resourcesApp

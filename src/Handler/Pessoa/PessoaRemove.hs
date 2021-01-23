@@ -6,7 +6,7 @@
 {-# LANGUAGE QuasiQuotes           #-}
 {-# LANGUAGE TemplateHaskell       #-}
 {-# LANGUAGE TypeFamilies          #-}
-module PessoaRemove where
+module Handler.Pessoa.PessoaRemove where
 
 import Foundation
 import Yesod.Core

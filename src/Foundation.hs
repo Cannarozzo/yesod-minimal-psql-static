@@ -25,7 +25,7 @@ staticFiles "static"
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 Pessoa
-    nome Text
+    nome Text      
     sobreNome Text
     idade Int
     deriving Show

@@ -17,8 +17,14 @@ main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
        flip runSqlPersistMPool pool $ do
               runMigration migrateAll
               --insert $ Pessoa "Felipe" "Cannarozzo" 34
+              let pid = (toSqlKey 2 :: Key Pessoa)
+             -- nn <- update pid [PessoaIdade +=. 1]
+             -- liftIO $ print nn
+              pessoa <- get pid
+              liftIO $ print pessoa
        static@(Static settings) <- static "static"
        warp 8080 (App pool static)
+-- Pattern Match
        
 {-
 main::IO()

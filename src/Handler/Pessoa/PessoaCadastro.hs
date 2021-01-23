@@ -6,7 +6,7 @@
 {-# LANGUAGE QuasiQuotes           #-}
 {-# LANGUAGE TemplateHaskell       #-}
 {-# LANGUAGE TypeFamilies          #-}
-module PessoaCadastro where
+module Handler.Pessoa.PessoaCadastro where
 
 import Foundation
 import Yesod.Core

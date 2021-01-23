@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module BlogPost where
+module Handler.BlogPost where
 
 import Foundation
 import Yesod.Core

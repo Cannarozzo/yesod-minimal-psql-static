@@ -6,7 +6,7 @@
 {-# LANGUAGE QuasiQuotes           #-}
 {-# LANGUAGE TemplateHaskell       #-}
 {-# LANGUAGE TypeFamilies          #-}
-module Pessoas where
+module Handler.Pessoa.Pessoas where
 
 import Foundation
 import Yesod.Core
@@ -16,18 +16,27 @@ import Data.Text (Text)
 
 getPessoasR :: Handler Html
 getPessoasR = do
-    pessoasEntity <- runDB $ selectList [] [Asc PessoaIdade]
+    pessoasEntity <- runDB $ selectList [] [Desc PessoaNome] 
     --let pessoas = fmap (\ (Entity pid pessoa) -> pessoa) pessoasEntity
    -- liftIO $ putStrLn $ show pessoas
     defaultLayout 
         [whamlet|
             $forall (Entity pid pessoa) <- pessoasEntity
                <p> 
+                    #{show $ pessoaNome pessoa}
                     <a href=@{PessoaR pid }>
-                        #{show $ pessoaNome pessoa}
+                        Dados detalhados
+                    <a href=@{PessoaRemoveR pid} >
+                        Remover Pessoa
+                    <a href=@{PessoaAtualizaR pid}>
+                        Atualizar dados da Pessoa
+                        
                    
         |]
-    
+
+--let pessoaId = (formSqlKey 1 :: Key Pessoa)
+
+--selectList [PessoaId ==. pessoaId] [LimitTo 1]    
 --selectList [BlogPostAuthorId ==. johnId] [LimitTo 1]  
 --people <- selectList [PersonAge >. 25, PersonAge <=. 30] []
 

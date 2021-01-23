@@ -4,6 +4,6 @@
 /pessoas                    PessoasR            GET
 !/pessoa/cadastro           PessoaCadastroR     GET POST
 !/pessoa/remove/#PessoaId   PessoaRemoveR       GET POST
-!/pessoa/atualiza           PessoaAtualizaR     GET POST
+!/pessoa/atualiza/#PessoaId PessoaAtualizaR     GET POST
 /blog-post                  BlogPostR           GET POST
 /static StaticR Static getStatic

@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module Pessoa where
+module Handler.Pessoa.Pessoa where
 
 import Foundation
 import Yesod.Core
@@ -13,7 +13,6 @@ getPessoaR pessoaId = do
         [whamlet| 
             <p>
                 #{show pessoa}
-        
         |]
 
 postPessoaR :: PessoaId -> Handler Html
